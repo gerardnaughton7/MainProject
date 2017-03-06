@@ -7,7 +7,9 @@
 </ion-header>
 
 <ion-content padding>
+    <!-- using ion-list to list the books-->
     <ion-list>
+      <!--angular2 syntax which allows us to loop through the objects-->
       <ion-item *ngFor="let book of books" (click)="bookSelected($event, book)">
         {{book.Title}}
       </ion-item>
