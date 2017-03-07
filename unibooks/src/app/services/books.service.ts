@@ -4,21 +4,26 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class BookService{
-    //variables
     http:any;
     apiKey:String;
     bookurl:String;
 
-    //create constructor to connect to mlab database
     constructor(http:Http){
         this.http = http;
         this.apiKey = 'GSEkjG1w-1Rv5lVRpftyp39Sa_hheO3S';
         this.bookurl = 'https://api.mlab.com/api/1/databases/unibooks/collections/books';
     }
-    //return books from mlab
+    //return books
     getbooks(){
         return this.http.get(this.bookurl+'?apiKey='+this.apiKey)
             .map(res => res.json());
     }
 
+    //add new book
+    addBook(book){
+        var headers = new Headers();
+        headers.append('Content-Type' , 'application/json');
+        return this.http.post(this.bookurl+'?apiKey='+this.apiKey, JSON.stringify(book),{headers:headers})
+        .map(res=>res.json());
+    }
 }
