@@ -8,6 +8,8 @@ import {BookDetailsPage} from '../pages/book-details/book-details';
 import {LoginPage} from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import {MenuPage} from '../pages/menu/menu';
+import {SignUpPage} from '../pages/sign-up/sign-up';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,6 +19,7 @@ import {MenuPage} from '../pages/menu/menu';
     BookDetailsPage,
     LoginPage,
     MenuPage,
+    SignUpPage,
     TabsPage
   ],
   imports: [
@@ -31,6 +34,7 @@ import {MenuPage} from '../pages/menu/menu';
     BookDetailsPage,
     LoginPage,
     MenuPage,
+    SignUpPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

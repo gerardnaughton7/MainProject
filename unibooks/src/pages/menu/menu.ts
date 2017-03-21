@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {LoginPage} from '../login/login';
+import {SignUpPage} from '../sign-up/sign-up';
 
 @Component({
   selector: 'menu',
@@ -13,11 +14,16 @@ export class MenuPage {
   }
 
   signUpPage() {
-   this.navCtrl.push(LoginPage);
+   this.navCtrl.push(SignUpPage);
  }
 
  loginPage() {
    this.navCtrl.push(LoginPage);
  }
 
+ logout() {
+
+ }
+
 }
+ 
