@@ -1,10 +1,7 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button (click)="menu()">
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>
-      Books
+      Menu
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,8 +10,11 @@
     <!-- using ion-list to list the books-->
     <ion-list>
       <!--angular2 syntax which allows us to loop through the objects-->
-      <ion-item *ngFor="let book of books" (click)="bookSelected($event, book)">
-        {{book.Title}}
+      <ion-item (click)="signUpPage()">
+        Sign Up
+      </ion-item>
+      <ion-item (click)="loginPage()">
+        Log In
       </ion-item>
     </ion-list>
 

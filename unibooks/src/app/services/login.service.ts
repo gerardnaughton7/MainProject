@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
-export class BookService{
+export class LoginService{
     http:any;
     apiKey:String;
     bookurl:String;

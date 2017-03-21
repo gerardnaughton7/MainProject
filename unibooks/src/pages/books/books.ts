@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {BookService} from '../../app/services/books.service';
 import {BookDetailsPage} from '../book-details/book-details';
+import {MenuPage} from '../menu/menu';
 
 @Component({
   selector: 'books',
@@ -20,6 +21,7 @@ export class BooksPage {
   ngOnInit(){
     this.bookService.getbooks().subscribe(books => {
       this.books = books;
+      console.log(books);
     });
   }
 
@@ -30,4 +32,7 @@ export class BooksPage {
     });
   }
 
+  menu(){
+    this.navCtrl.push(MenuPage);
+  }
 }

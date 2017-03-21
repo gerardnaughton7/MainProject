@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {BookService} from './services/books.service';//imported our BooksServices
+import {BookService} from './services/books.service';//imported our BookServices
+import {LoginService} from './services/login.service';//imported our LoginServices
 import { TabsPage } from '../pages/tabs/tabs';
-
 
 @Component({
   templateUrl: 'app.html',
-  providers: [BookService]//brought in as a provider
+  providers: [BookService, LoginService]//brought in as a provider
 })
 export class MyApp {
   rootPage = TabsPage;

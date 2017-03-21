@@ -5,8 +5,9 @@ import { AboutPage } from '../pages/about/about';
 import { CreateAdPage } from '../pages/create-ad/create-ad';
 import {BooksPage} from '../pages/books/books';
 import {BookDetailsPage} from '../pages/book-details/book-details';
+import {LoginPage} from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import {MenuPage} from '../pages/menu/menu';
 @NgModule({
   declarations: [
     MyApp,
@@ -14,6 +15,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     CreateAdPage,
     BooksPage,
     BookDetailsPage,
+    LoginPage,
+    MenuPage,
     TabsPage
   ],
   imports: [
@@ -26,6 +29,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     CreateAdPage,
     BooksPage,
     BookDetailsPage,
+    LoginPage,
+    MenuPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
