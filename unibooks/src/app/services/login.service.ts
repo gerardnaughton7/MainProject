@@ -6,25 +6,25 @@ import 'rxjs/Rx';
 export class LoginService{
     http:any;
     apiKey:String;
-    bookurl:String;
+    loginurl:String;
 
     constructor(http:Http){
         this.http = http;
         this.apiKey = 'GSEkjG1w-1Rv5lVRpftyp39Sa_hheO3S';
-        this.bookurl = 'https://api.mlab.com/api/1/databases/unibooks/collections/books';
+        this.loginurl = 'https://api.mlab.com/api/1/databases/unibooks/collections/customers';
     }
-    //return books
-    getbooks(){
-        return this.http.get(this.bookurl+'?apiKey='+this.apiKey)
+    //return users
+    getUsers(){
+        return this.http.get(this.loginurl+'?apiKey='+this.apiKey)
             .map(res => res.json());
     }
 
     //add new book
-    addBook(book){
+    addUser(newUser){
         var headers = new Headers();
-        console.log(book);
+        console.log(newUser);
         headers.append('Content-Type' , 'application/json');
-        return this.http.post(this.bookurl+'?apiKey='+this.apiKey, JSON.stringify(book),{headers: headers})
+        return this.http.post(this.loginurl+'?apiKey='+this.apiKey, JSON.stringify(newUser),{headers: headers})
         .map(res => res.json());
     }
 }

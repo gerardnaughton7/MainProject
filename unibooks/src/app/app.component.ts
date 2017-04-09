@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import {BookService} from './services/books.service';//imported our BookServices
 import {LoginService} from './services/login.service';//imported our LoginServices
 import { TabsPage } from '../pages/tabs/tabs';
+import {MD5Service} from './services/md5.service';//imported MD5Service
 
 @Component({
   templateUrl: 'app.html',
