@@ -1,34 +1,51 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Create Ad
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-30>
+          <button ion-button (click)="menu()">
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col width-40>
+          <ion-title >
+            Create Ad
+          </ion-title>
+        </ion-col>
+        <ion-col width-30>
+          <ion-title >
+            <!-- log out button-->
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-title text-align="center">Enter your details</ion-title>
     <!--Form to create ad-->
     <form (submit)="onSubmit()">
       <ion-list>
         <ion-item>
-          <ion-label fixed>Title:</ion-label>
-          <ion-input [(ngModel)] = "Title" name="Title" type="text"></ion-input> 
+          <ion-label floating>Title:</ion-label>
+          <ion-input [(ngModel)] = "Title" name="Title" type="text" required></ion-input> 
         </ion-item>
         <ion-item>
-          <ion-label fixed>Author:</ion-label>
-          <ion-input [(ngModel)] = "Author" name="Author" type="textarea"></ion-input> 
+          <ion-label floating>Author:</ion-label>
+          <ion-input [(ngModel)] = "Author" name="Author" type="textarea" required></ion-input> 
         </ion-item>
         <ion-item>
-          <ion-label fixed>Seller:</ion-label>
-          <ion-input [(ngModel)] = "Seller" name="Seller" type="textarea"></ion-input> 
+          <ion-label floating>Seller:</ion-label>
+          <ion-input [(ngModel)] = "Seller" name="Seller" type="textarea" required></ion-input> 
         </ion-item>
         <ion-item>
-          <ion-label fixed>Description:</ion-label>
-          <ion-input [(ngModel)] = "Description" name="Description" type="textarea"></ion-input> 
+          <ion-label floating>Description:</ion-label>
+          <ion-input [(ngModel)] = "Description" name="Description" type="textarea" required></ion-input> 
         </ion-item>
         <ion-item>
-          <ion-label fixed>Contact Info:</ion-label>
-          <ion-input [(ngModel)] = "Phone" name="Phone" type="textarea"></ion-input> 
+          <ion-label floating>Contact Info:</ion-label>
+          <ion-input [(ngModel)] = "Phone" name="Phone" type="textarea" required></ion-input> 
         </ion-item>
         <!--submit button-->
         <ion-item>

@@ -12,27 +12,27 @@
     <ion-list>
       <ion-item>
         <ion-label floating>Name</ion-label>
-        <ion-input [(ngModel)]="Name" name="name" type="text" value=""></ion-input>
+        <ion-input [(ngModel)]="Name" name="name" type="text" value="" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Address</ion-label>
-        <ion-input [(ngModel)]="Address" name="Address" type="text" value=""></ion-input>
+        <ion-input [(ngModel)]="Address" name="Address" type="text" value="" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Phone</ion-label>
-        <ion-input [(ngModel)]="Phone" name="Phone" type="text" value=""></ion-input>
+        <ion-input [(ngModel)]="Phone" name="Phone" type="text" value="" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input [(ngModel)]="Email" name="Email"  type="text" value=""></ion-input>
+        <ion-input [(ngModel)]="Email" name="Email"  type="email" value="" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input [(ngModel)]="Password" name="Password" type="password" value=""></ion-input>
+        <ion-input [(ngModel)]="Password" name="Password" type="password" value="" required></ion-input>
       </ion-item>
       <ion-item>
         <button ion-button type="submit" block>Create Ad</button>

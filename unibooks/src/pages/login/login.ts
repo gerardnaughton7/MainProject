@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {LoginService} from '../../app/services/login.service';
 import {BooksPage} from '../books/books';
 import {MD5Service} from '../../app/services/md5.service';
+import {App, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'login',
@@ -16,7 +17,7 @@ export class LoginPage {
   public match = false;
   
 
-  constructor(public navCtrl: NavController, private LoginService: LoginService) {
+  constructor(public navCtrl: NavController, private LoginService: LoginService, private alertCtrl: AlertController) {
     
   }
   //get existing users
@@ -40,15 +41,20 @@ export class LoginPage {
       {
         this.match = true;
         console.log("successful login"+ user.Password);
-        this.navCtrl.push(BooksPage);
+        this.navCtrl.parent(BooksPage);
       }
     }   
     console.log(this.match);
     //create new user 
     if(this.match === false)
     {
-      console.log("incorrect"+ user.Password);
-      alert("Incorrect Email or Password entered! Please try again.");
+      console.log("incorrect"+ user.Password + user.Email);
+      let alert = this.alertCtrl.create({
+        title: 'Incorrect',
+        subTitle: 'Incorrect Email or Password entered! Please try again.',
+        buttons: ['OK']
+        });
+      alert.present();
     }
   }
 }

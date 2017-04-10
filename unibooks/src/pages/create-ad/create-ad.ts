@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {BookService} from '../../app/services/books.service';
 import {BooksPage} from '../books/books';
+import {MenuPage} from '../menu/menu';
 
 @Component({
   selector: 'create-ad',
@@ -36,6 +37,10 @@ export class CreateAdPage {
       console.log(book);
      });
      
-     this.navCtrl.push(BooksPage);
+     this.navCtrl.parent(BooksPage);
+  }
+
+   menu(){
+    this.navCtrl.push(MenuPage);
   }
 }

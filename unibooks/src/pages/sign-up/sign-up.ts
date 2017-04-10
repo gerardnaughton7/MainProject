@@ -43,7 +43,7 @@ export class SignUpPage {
       Email: this.Email,
       Password: MD5Service(this.Password)
     }
-
+    
     //check if user email exists. output alert if email exists
     for(let data of this.existingUsers)
     {
@@ -51,15 +51,21 @@ export class SignUpPage {
       if(user.Email === data.Email)
       {
         this.match = true;
-        alert("Im sorry this email already Exists");
+        let alert = this.alertCtrl.create({
+        title: 'Email Exists',
+        subTitle: 'Email Already exists. Log in or try again!',
+        buttons: ['OK']
+        });
+        alert.present();
       }
     }   
     //create new user 
     if(this.match == false)
     this.LoginService.addUser(user).subscribe(data => {
       this.newUser = data;
-      console.log(user);
+      console.log("data entered"+user);
       this.navCtrl.push(BooksPage);
     });
+    
   }
 }
