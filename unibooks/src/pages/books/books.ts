@@ -18,7 +18,7 @@ export class BooksPage {
   }
 
   //will run when initialised and bring in all books from the service
-  ngOnInit(){
+  ionViewWillEnter(){
     this.bookService.getbooks().subscribe(books => {
       this.books = books;
       console.log(books);

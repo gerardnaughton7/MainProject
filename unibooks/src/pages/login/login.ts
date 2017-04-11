@@ -41,7 +41,7 @@ export class LoginPage {
       {
         this.match = true;
         console.log("successful login"+ user.Password);
-        this.navCtrl.parent(BooksPage);
+        this.navCtrl.setRoot(BooksPage);
       }
     }   
     console.log(this.match);

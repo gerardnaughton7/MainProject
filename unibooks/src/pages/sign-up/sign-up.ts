@@ -4,6 +4,7 @@ import {LoginService} from '../../app/services/login.service';
 import {BooksPage} from '../books/books';
 import {App, AlertController } from 'ionic-angular';
 import {MD5Service} from '../../app/services/md5.service';
+import {global} from '../../app/services/global.login';
 
 @Component({
   selector: 'sign-up',
@@ -21,7 +22,7 @@ export class SignUpPage {
   public match = false;
 
 
-  constructor(public navCtrl: NavController, private LoginService: LoginService, private alertCtrl: AlertController, private app:App) {
+  constructor(public navCtrl: NavController,private global:global, private LoginService: LoginService, private alertCtrl: AlertController, private app:App) {
     
   }
    
@@ -61,11 +62,14 @@ export class SignUpPage {
     }   
     //create new user 
     if(this.match == false)
-    this.LoginService.addUser(user).subscribe(data => {
+    {
+      this.global.setLoginUser(user.Email);
+      console.log(this.global.getLoginUser())
+      this.LoginService.addUser(user).subscribe(data => {
       this.newUser = data;
       console.log("data entered"+user);
-      this.navCtrl.push(BooksPage);
+      this.navCtrl.setRoot(BooksPage);
     });
-    
+    }
   }
 }

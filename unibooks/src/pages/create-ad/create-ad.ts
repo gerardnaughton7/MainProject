@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App, AlertController } from 'ionic-angular';
 import {BookService} from '../../app/services/books.service';
 import {BooksPage} from '../books/books';
 import {MenuPage} from '../menu/menu';
+import {global} from '../../app/services/global.login';
 
 @Component({
   selector: 'create-ad',
@@ -17,12 +18,24 @@ export class CreateAdPage {
   public Phone: String;
   public newAd: any;
 
-  constructor(public navCtrl: NavController, private bookService: BookService) {
+  constructor(public navCtrl: NavController, private bookService: BookService, private global:global, private alertCtrl: AlertController) {
     
   }
-
-  
-  onSubmit(){
+    
+    ionViewWillEnter(){
+      if(this.global.getLoginUser() === "")
+      {
+        let alert = this.alertCtrl.create({
+        title: 'Sorry',
+        subTitle: 'Use must Log In or Sign In to Create Ad',
+        buttons: ['OK']
+        });
+        alert.present();
+        this.navCtrl.push(MenuPage); 
+      }   
+    }
+   
+    onSubmit(){
     var book = {
       Title: this.Title,
       Author: this.Author,
@@ -37,7 +50,7 @@ export class CreateAdPage {
       console.log(book);
      });
      
-     this.navCtrl.parent(BooksPage);
+     this.navCtrl.parent();
   }
 
    menu(){
