@@ -16,6 +16,7 @@ export class CreateAdPage {
   public Seller: String;
   public Description: String;
   public Phone: String;
+  public Email: String;
   public newAd: any;
 
   constructor(public navCtrl: NavController, private bookService: BookService, private global:global, private alertCtrl: AlertController) {
@@ -41,18 +42,19 @@ export class CreateAdPage {
       Author: this.Author,
       Seller: this.Seller,
       Description: this.Description,
-      Phone: this.Phone
+      Phone: this.Phone,
+      Email: this.global.getLoginUser()
     }
 
     //add new ad
     this.bookService.addBook(book).subscribe(data => {
       this.newAd = data;
-      console.log(book);
      });
      
-     this.navCtrl.parent();
+     this.navCtrl.setRoot(BooksPage);
   }
-
+  
+   //brings you to menu page
    menu(){
     this.navCtrl.push(MenuPage);
   }

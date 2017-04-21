@@ -4,6 +4,7 @@ import {LoginService} from '../../app/services/login.service';
 import {BooksPage} from '../books/books';
 import {MD5Service} from '../../app/services/md5.service';
 import {App, AlertController } from 'ionic-angular';
+import {global} from '../../app/services/global.login';
 
 @Component({
   selector: 'login',
@@ -17,17 +18,16 @@ export class LoginPage {
   public match = false;
   
 
-  constructor(public navCtrl: NavController, private LoginService: LoginService, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private LoginService: LoginService, private alertCtrl: AlertController, private global: global) {
     
   }
   //get existing users
   ngOnInit(){
     this.LoginService.getUsers().subscribe(existingUsers => {
       this.existingUsers = existingUsers;
-      console.log(existingUsers);
     });
   }
-
+  //checks if user info is correct if not will output alert saying wrong email or password
   logIn(){
     var user = {
       Email: this.Email,
@@ -36,19 +36,17 @@ export class LoginPage {
 
     for(let data of this.existingUsers)
     {
-      console.log(user.Email);
       if(user.Email === data.Email && user.Password === data.Password)
       {
+        this.global.setLoginUser(user.Email);
         this.match = true;
-        console.log("successful login"+ user.Password);
         this.navCtrl.setRoot(BooksPage);
       }
     }   
-    console.log(this.match);
-    //create new user 
+
+    //invalid email password 
     if(this.match === false)
     {
-      console.log("incorrect"+ user.Password + user.Email);
       let alert = this.alertCtrl.create({
         title: 'Incorrect',
         subTitle: 'Incorrect Email or Password entered! Please try again.',

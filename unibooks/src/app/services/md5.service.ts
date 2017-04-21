@@ -1,5 +1,5 @@
 // Taken from https://github.com/killmenot/webtoolkit.md5
-
+//encrypt my password data
 export let MD5Service = (string) => {
 
     function RotateLeft(lValue, iShiftBits) {

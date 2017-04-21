@@ -7,20 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-    <!-- using ion-list to list the books-->
+    <!-- using ion-list to list menu items-->
     <ion-list>
-      <!--angular2 syntax which allows us to loop through the objects-->
       <ion-item (click)="signUpPage()">
         Sign Up
       </ion-item>
       <ion-item (click)="loginPage()">
         Log In
       </ion-item>
+      <!--hidden unless user is logged in-->
+      <ion-item (click)="myAdsPage()" [hidden] = "!showLogOut">
+        My Ads
+      </ion-item>
     </ion-list>
-    <ion-footer>
-        <button menuClose ion-item (click)="logout()">
-            Logout
-        </button>
+      <!--hidden unless logged in-->
+      <ion-footer>
+        <ion-item (click)="logOut()" [hidden] = "!showLogOut">
+          Log Out
+        </ion-item>-->
     </ion-footer>
 
 </ion-content>

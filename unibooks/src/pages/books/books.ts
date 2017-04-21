@@ -17,21 +17,21 @@ export class BooksPage {
 
   }
 
-  //will run when initialised and bring in all books from the service
+  //will run everytime view is opened and bring in all books from the service
   ionViewWillEnter(){
     this.bookService.getbooks().subscribe(books => {
       this.books = books;
-      console.log(books);
     });
   }
 
-  //will bring you to the book details page when book is clicked
+  //will bring you to the book details page when book is clicked and pass through the details of that book
   bookSelected(event, book){
     this.navCtrl.push(BookDetailsPage, {
       book: book
     });
   }
 
+  //brings you to the menu page
   menu(){
     this.navCtrl.push(MenuPage);
   }

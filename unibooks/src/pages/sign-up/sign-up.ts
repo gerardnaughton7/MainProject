@@ -31,7 +31,6 @@ export class SignUpPage {
   ngOnInit(){
     this.LoginService.getUsers().subscribe(existingUsers => {
       this.existingUsers = existingUsers;
-      console.log(existingUsers);
     });
   }
   
@@ -48,7 +47,6 @@ export class SignUpPage {
     //check if user email exists. output alert if email exists
     for(let data of this.existingUsers)
     {
-      console.log(data);
       if(user.Email === data.Email)
       {
         this.match = true;
@@ -60,14 +58,12 @@ export class SignUpPage {
         alert.present();
       }
     }   
-    //create new user 
+    //create new user if info is correct
     if(this.match == false)
     {
       this.global.setLoginUser(user.Email);
-      console.log(this.global.getLoginUser())
       this.LoginService.addUser(user).subscribe(data => {
       this.newUser = data;
-      console.log("data entered"+user);
       this.navCtrl.setRoot(BooksPage);
     });
     }
