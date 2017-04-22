@@ -22,15 +22,16 @@ export class BookService{
     //add new book
     addBook(book){
         var headers = new Headers();
-        console.log(book);
         headers.append('Content-Type' , 'application/json');
         return this.http.post(this.bookurl+'?apiKey='+this.apiKey, JSON.stringify(book),{headers: headers})
         .map(res => res.json());
     }
-
+    //delete ad function not working doesnt give any errors but doesnt remove ad
     deleteAd(adId){
         console.log("it made the factory"+ adId);
         return this.http.delete(this.bookurl+'/'+adId+'?apiKey='+this.apiKey)
-                .map(res => res.json());
+        .map(res => res.json());
     }
+    
+
 }

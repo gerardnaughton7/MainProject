@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color = "secondary">
     <ion-title>
       Book Details
     </ion-title>
@@ -8,18 +8,19 @@
 <!--outputs book info on card format-->
 <ion-content padding>
   <ion-card>
-      <ion-card-header>
-          <strong>{{book.Title}}</strong>
-      </ion-card-header>
-      <ion-card-content>
-          <p><strong>Author: </strong>{{book.Author}}</p>
-          <br>
-          <p><strong>Seller: </strong>{{book.Seller}}</p>
-          <br>
-          <p><strong>Description: </strong>{{book.Description}}</p>
-          <br>
-          <p><strong>Phone: </strong>{{book.Phone}}</p>
-          <br>
-      </ion-card-content>
-  </ion-card>
+  <img src="/universityBooks.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      <strong>{{book.Title}}</strong>
+    </ion-card-title>
+    <p><strong>Author: </strong>{{book.Author}}</p>
+    <br>
+    <p><strong>Seller: </strong>{{book.Seller}}</p>
+    <br>
+    <p><strong>Description: </strong>{{book.Description}}</p>
+    <br>
+    <p><strong>Phone: </strong>{{book.Phone}}</p>
+    <br>
+  </ion-card-content>
+</ion-card>
 </ion-content>
