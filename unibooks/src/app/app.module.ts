@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {MenuPage} from '../pages/menu/menu';
 import {SignUpPage} from '../pages/sign-up/sign-up';
 import {MyAdsPage} from '../pages/my-ads/my-ads';
+import {MyAdsDetailsPage} from '../pages/myAds-details/myAds-details';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MyAdsPage} from '../pages/my-ads/my-ads';
     MenuPage,
     SignUpPage,
     MyAdsPage,
+    MyAdsDetailsPage,
     TabsPage
   ],
   imports: [
@@ -38,6 +40,7 @@ import {MyAdsPage} from '../pages/my-ads/my-ads';
     MenuPage,
     SignUpPage,
     MyAdsPage,
+    MyAdsDetailsPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

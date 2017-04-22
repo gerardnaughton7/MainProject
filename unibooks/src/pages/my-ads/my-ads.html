@@ -26,7 +26,7 @@
     <ion-list>
       <!--angular2 syntax which allows us to loop through the objects-->
       <ion-item *ngFor="let book of mBooks" (click)="bookSelected($event, book)">
-        {{books.Title}}
+        {{book.Title}}
       </ion-item>
     </ion-list>
 

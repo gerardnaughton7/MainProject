@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {BookService} from '../../app/services/books.service';
-import {BooksPage} from '../books/books';
-import {BookDetailsPage} from '../book-details/book-details';
-import {MD5Service} from '../../app/services/md5.service';
+import {MyAdsDetailsPage} from '../myAds-details/myAds-details';
+import {MenuPage} from '../menu/menu';
 import {App, AlertController } from 'ionic-angular';
 import {global} from '../../app/services/global.login';
 
@@ -15,36 +14,46 @@ export class MyAdsPage {
 
   public Email: String;
   public allBooks: any;
-  public myBooks: [any];
-  public count: any = 0;
+  public mBooks = [];
 
   constructor(public navCtrl: NavController, private BookService: BookService, private alertCtrl: AlertController, private global: global) {
     
   }
+
   //get existing users
   ngOnInit(){
     this.BookService.getbooks().subscribe(allBooks => {
     this.allBooks = allBooks;
-    console.log(allBooks);
-    var mBooks = [];
+
+    //get only ads that user created
     for(let data of this.allBooks)
     {
-      console.log(data.Email);
-      console.log(this.global.getLoginUser);
       if(this.global.getLoginUser() === data.Email)
       {
-        mBooks.push(data);
-        console.log("at first if" + mBooks);
-        this.count++;
+          var book = {
+          Title: data.Title,
+          Author: data.Author,
+          Seller: data.Seller,
+          Description: data.Description,
+          Phone: data.Contact,
+          Email: data.Email,
+          Id: data._id.$oid
+          }
+          this.mBooks.push(book);
       }
-    }    
-    console.log("at first if" + this.myBooks); 
+    } 
     });
   }
 
+  //if book is selected go to book details page
   bookSelected(event, book){
-    this.navCtrl.push(BookDetailsPage, {
+    this.navCtrl.push(MyAdsDetailsPage, {
       book: book
     });
+  }
+
+  //brings you to the menu page
+  menu(){
+    this.navCtrl.push(MenuPage);
   }
 }

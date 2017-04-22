@@ -17,11 +17,11 @@ export class MenuPage {
   }
   // check if user is logged in
   ionViewWillEnter() {
-        if(this.global.getLoginUser() !== "")
-        {
-          this.showLogOut = true;
-        }
-    }
+      if(this.global.getLoginUser() !== "")
+      {
+        this.showLogOut = true;
+      }
+  }
  //navigate to sign up page
   signUpPage() {
    this.navCtrl.push(SignUpPage);
@@ -32,7 +32,7 @@ export class MenuPage {
  }
  //navigates to my ads page if logged in
  myAdsPage() {
-   this.navCtrl.push(MyAdsPage);
+   this.navCtrl.setRoot(MyAdsPage);
  }
  //log out and reset vaiables
  logOut() {

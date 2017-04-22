@@ -1,3 +1,4 @@
+<!--myAds details page-->
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -20,6 +21,11 @@
           <br>
           <p><strong>Phone: </strong>{{book.Phone}}</p>
           <br>
+          <button ion-button (click)="deleteAd(book.Id)">
+             Delete
+          </button>
       </ion-card-content>
   </ion-card>
+  <ion-item>
+  </ion-item>
 </ion-content>

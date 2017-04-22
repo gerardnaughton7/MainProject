@@ -8,9 +8,11 @@ import {BookService} from '../../app/services/books.service';
 export class BookDetailsPage {
     public book:any;
     public result:any;
+    public deleteButton = true;
 
     constructor(public navCtrl: NavController, public params: NavParams, bookService: BookService) {
         this.book = params.get('book');
+        this.deleteButton = params.get('deleteButton');
+        console.log(this.deleteButton);
   }
-
 }

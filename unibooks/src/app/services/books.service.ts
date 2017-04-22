@@ -27,4 +27,10 @@ export class BookService{
         return this.http.post(this.bookurl+'?apiKey='+this.apiKey, JSON.stringify(book),{headers: headers})
         .map(res => res.json());
     }
+
+    deleteAd(adId){
+        console.log("it made the factory"+ adId);
+        return this.http.delete(this.bookurl+'/'+adId+'?apiKey='+this.apiKey)
+                .map(res => res.json());
+    }
 }
