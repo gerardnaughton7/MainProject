@@ -11,7 +11,7 @@ export class LoginService{
     constructor(http:Http){
         this.http = http;
         this.apiKey = 'GSEkjG1w-1Rv5lVRpftyp39Sa_hheO3S';
-        this.loginurl = 'https://api.mlab.com/api/1/databases/unibooks/collections/customers';
+        this.loginurl = 'https://api.mlab.com/api/1/databases/unibooks/collections/users';
     }
     //return users
     getUsers(){

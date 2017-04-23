@@ -35,7 +35,7 @@ export class MyAdsPage {
           Author: data.Author,
           Seller: data.Seller,
           Description: data.Description,
-          Phone: data.Contact,
+          Phone: data.Phone,
           Email: data.Email,
           Id: data._id.$oid
           }
