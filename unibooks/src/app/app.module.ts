@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {MenuPage} from '../pages/menu/menu';
 import {SignUpPage} from '../pages/sign-up/sign-up';
 import {MyAdsPage} from '../pages/my-ads/my-ads';
+import {UpdateAdPage} from '../pages/updateAd/updateAd';
 import {MyAdsDetailsPage} from '../pages/myAds-details/myAds-details';
 
 @NgModule({
@@ -23,6 +24,7 @@ import {MyAdsDetailsPage} from '../pages/myAds-details/myAds-details';
     MenuPage,
     SignUpPage,
     MyAdsPage,
+    UpdateAdPage,
     MyAdsDetailsPage,
     TabsPage
   ],
@@ -40,6 +42,7 @@ import {MyAdsDetailsPage} from '../pages/myAds-details/myAds-details';
     MenuPage,
     SignUpPage,
     MyAdsPage,
+    UpdateAdPage,
     MyAdsDetailsPage,
     TabsPage
   ],

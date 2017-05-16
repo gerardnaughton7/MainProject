@@ -32,7 +32,7 @@ export class MenuPage {
  }
  //navigates to my ads page if logged in
  myAdsPage() {
-   this.navCtrl.setRoot(MyAdsPage);
+   this.navCtrl.push(MyAdsPage);
  }
  //log out and reset vaiables
  logOut() {

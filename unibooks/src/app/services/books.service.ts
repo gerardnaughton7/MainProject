@@ -26,10 +26,15 @@ export class BookService{
         return this.http.post(this.bookurl+'?apiKey='+this.apiKey, JSON.stringify(book),{headers: headers})
         .map(res => res.json());
     }
-    //delete ad function not working doesnt give any errors but doesnt remove ad
-    deleteAd(adId){
-        console.log("it made the factory"+ adId);
-        return this.http.delete(this.bookurl+'/'+adId+'?apiKey='+this.apiKey)
+    //deletes ad from datatbase
+    deleteAd(bookId){
+        return this.http.delete(this.bookurl+'/'+bookId+'?apiKey='+this.apiKey)
+        .map(res => res.json());
+    }
+    
+    //update ad
+    updateAd(book){
+        return this.http.delete(this.bookurl+'/'+book+'?apiKey='+this.apiKey)
         .map(res => res.json());
     }
     

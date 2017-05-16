@@ -1,33 +1,19 @@
 <ion-header>
   <ion-navbar color = "secondary">
-    <ion-grid>
-      <!-- Menu and Title entered here-->
-      <ion-row>
-        <ion-col width-30>
-          <button ion-button (click)="menu()" color = "light">
-            <ion-icon name="menu"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col width-40>
-          <ion-title >
-            Create Ad
-          </ion-title>
-        </ion-col>
-        <ion-col width-30>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-title >
+      Update Ad
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-title>Enter Book details</ion-title>
+    <ion-title>Enter new Book details</ion-title>
     <!--Form to create ad-->
-    <form (submit)="onSubmit()">
+    <form (submit)="updateAd()">
       <ion-list>
         <ion-item>
           <ion-label floating>Title:</ion-label>
-          <ion-input [(ngModel)] = "Title" name="Title" type="text" required></ion-input> 
+          <ion-input [(ngModel)] = "Title" name="Title" type="text" required ></ion-input> 
         </ion-item>
         <ion-item>
           <ion-label floating>Author:</ion-label>
@@ -51,7 +37,7 @@
         </ion-item>
         <!--submit button-->
         <ion-item>
-          <button ion-button type="submit" block>Create Ad</button>
+          <button ion-button type="submit" block>Update Ad</button>
         </ion-item>
       </ion-list>
     </form>

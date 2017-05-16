@@ -20,10 +20,17 @@
     <br>
     <p><strong>Description: </strong>{{book.Description}}</p>
     <br>
+    <p><strong>Price: </strong>{{book.Price}}</p>
+    <br>
     <p><strong>Phone: </strong>{{book.Phone}}</p>
+    <br>
+    <p><strong>Email: </strong>{{book.Email}}</p>
     <br>
     <button ion-button (click)="deleteAd(book.Id)">
     Delete
+    </button>
+    <button ion-button (click)="updateAd(book.Id)">
+    Update Ad
     </button>
   </ion-card-content>
 </ion-card>

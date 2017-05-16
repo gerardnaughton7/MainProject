@@ -17,6 +17,7 @@ export class CreateAdPage {
   public Description: String;
   public Phone: String;
   public Email: String;
+  public Price: String;
   public newAd: any;
 
   constructor(public navCtrl: NavController, private bookService: BookService, private global:global, private alertCtrl: AlertController) {
@@ -43,7 +44,8 @@ export class CreateAdPage {
       Seller: this.Seller,
       Description: this.Description,
       Phone: this.Phone,
-      Email: this.global.getLoginUser()
+      Email: this.global.getLoginUser(),
+      Price: this.Price
     }
 
     //add new ad
