@@ -33,8 +33,10 @@ export class BookService{
     }
     
     //update ad
-    updateAd(book){
-        return this.http.delete(this.bookurl+'/'+book+'?apiKey='+this.apiKey)
+    updateAd(bookId, book){
+        var headers = new Headers();
+        headers.append('Content-Type' , 'application/json');
+        return this.http.put(this.bookurl+'/'+bookId+'?apiKey='+this.apiKey, JSON.stringify(book),{headers: headers})
         .map(res => res.json());
     }
     

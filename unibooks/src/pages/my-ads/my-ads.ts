@@ -55,8 +55,4 @@ export class MyAdsPage {
     });
   }
 
-  //brings you to the menu page
-  menu(){
-    this.navCtrl.push(MenuPage);
-  }
 }

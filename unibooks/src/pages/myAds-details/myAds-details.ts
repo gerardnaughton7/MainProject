@@ -12,9 +12,10 @@ export class MyAdsDetailsPage {
 
     constructor(public navCtrl: NavController, public params: NavParams, private bookService: BookService, private alertCtrl: AlertController) {
         this.book = params.get('book');
+        console.log(this.book.Author);
   }
 
-  deleteAd(bookId){
+    deleteAd(bookId){
     this.bookService.deleteAd(bookId).subscribe(data => {
         this.result = data;
     });
@@ -25,11 +26,12 @@ export class MyAdsDetailsPage {
         });
         alert.present();
         this.navCtrl.pop();
-  }
+    }
 
     updateAd(){
     this.navCtrl.push(UpdateAdPage, {
       book: this.book
     });
+
   }
 }
