@@ -35,4 +35,5 @@ export class BooksPage {
   menu(){
     this.navCtrl.push(MenuPage);
   }
+
 }

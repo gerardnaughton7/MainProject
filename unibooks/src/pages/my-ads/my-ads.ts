@@ -43,15 +43,15 @@ export class MyAdsPage {
             }
             this.mBooks.push(this.book);
         }
-        console.log(this.book.Email);
       } 
+      console.log(this.mBooks)      
     });
   }
 
   //if book is selected go to book details page
   bookSelected(event, book){
     this.navCtrl.push(MyAdsDetailsPage, {
-      book: this.book
+      book: book
     });
   }
 
