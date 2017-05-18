@@ -12,7 +12,6 @@ export class MyAdsDetailsPage {
 
     constructor(public navCtrl: NavController, public params: NavParams, private bookService: BookService, private alertCtrl: AlertController) {
         this.book = params.get('book');
-        console.log(this.book.Author);
   }
 
     deleteAd(bookId){
@@ -21,7 +20,7 @@ export class MyAdsDetailsPage {
     });
     let alert = this.alertCtrl.create({
         title: 'Request Successful!',
-        subTitle: 'Your ad will be deleted shortly',
+        subTitle: 'Your ad will be updated shortly',
         buttons: ['OK']
         });
         alert.present();

@@ -43,8 +43,7 @@ export class MyAdsPage {
             }
             this.mBooks.push(this.book);
         }
-      } 
-      console.log(this.mBooks)      
+      }       
     });
   }
 
